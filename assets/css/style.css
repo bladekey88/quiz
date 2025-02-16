@@ -1,0 +1,195 @@
+/* Google Fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Audiowide&family=Bangers&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Exa:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Orbitron:wght@400..900&family=Oswald:wght@200..700&family=Poiret+One&family=Rethink+Sans:ital,wght@0,400..800;1,400..800");
+
+@font-face {
+    font-family: 'Gabarito';
+    font-style: normal;
+    font-weight: 400 700 900;
+    src: url(https://fonts.gstatic.com/s/gabarito/v7/QGYtz_0dZAGKJJ4t3HtoW4U.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* CSS Variables */
+:root {
+    --primary-color: rgb(12, 195, 235);
+    /* light blue */
+    --secondary-color: rgb(24, 54, 80);
+    /* dark blue */
+    --tertiary-color: rgb(227, 208, 80);
+    /* bright yellow */
+    --highlight-color: rgb(215, 44, 196);
+    /* neon pink */
+    --primary-font: "Gabarito", "Orbitron", sans-serif;
+    --button-colour: rgb(8, 91, 110);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100dvh
+}
+
+body {
+    background: url('https://jakecrichards.github.io/hackathon1/assets/images/keyboard.jpg') center center / cover no-repeat fixed;
+    background-color: rgb(2, 30, 54);
+    backdrop-filter: blur(0.55rem);
+    font-family: var(--primary-font);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* Navbar related items */
+
+nav {
+    top: 0;
+    position: sticky;
+    z-index: 10;
+    width: 100%;
+
+    background-color: rgba(17, 40, 59, 0.75);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 4rem;
+    color: white;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-container {
+    width: 20rem;
+    height: 140%;
+    background-color: rgb(34, 76, 113);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, .15));
+}
+
+nav .logo {
+    font-family: Gabarito, sans-serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    opacity: 1;
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 1rem
+}
+
+nav .logo-container img {
+    height: 100%;
+    height: 32px;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* MAIN SECTION AND CARDS */
+
+main {
+    margin-top: 3rem;
+    margin-inline: auto;
+    width: 70%;
+    max-width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto;
+}
+
+.grid-two-col {
+    grid-template-columns: 1fr 1fr;
+}
+
+.grid-three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-item {
+    background-color: var(--secondary-color);
+    backdrop-filter: blur(0.75rem);
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    box-shadow: 4px 7px 44px -10px rgba(5, 14, 19, 0.63);
+
+}
+
+.grid-item:hover {
+    border-color: white;
+    backdrop-filter: blur(1rem);
+    cursor: pointer;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.75rem;
+    padding-inline-start: 1.25rem;
+    color: white;
+    filter: drop-shadow(0 5px 5px rgba(7, 56, 91, 0.15));
+    text-wrap: pretty;
+
+}
+
+.card-header.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-header h2 {
+    font-weight: 600;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 76, 113);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.card-icon img {
+    aspect-ratio: 1/1;
+    height: 75%;
+    width: 75%;
+    max-width: 3rem;
+}
+
+
+.card-body {
+    padding-block-end: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 200;
+}
+
+
+/* Utility */
+.text-center {
+    text-align: center;
+}
